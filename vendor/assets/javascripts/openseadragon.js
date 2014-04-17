@@ -1,5 +1,5 @@
 //! OpenSeadragon 1.0.0
-//! Built on 2014-04-16
+//! Built on 2014-04-17
 //! Git commit: v1.0.0-122-g5dafa32-dirty
 //! http://openseadragon.github.io
 //! License: http://openseadragon.github.io/license/
@@ -7092,7 +7092,7 @@ function updateOnce( viewer ) {
     //viewer.profiler.beginUpdate();
 
     if ( viewer.autoResize ) {
-        containerSize = _getSafeElemSize( viewer.container );
+        containerSize = _getSafeElemSize( viewer.canvas );
         if ( !containerSize.equals( THIS[ viewer.hash ].prevContainerSize ) ) {
             // maintain image position
             var oldBounds = viewer.viewport.getBounds();
