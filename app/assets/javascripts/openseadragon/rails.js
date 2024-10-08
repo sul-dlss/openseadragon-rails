@@ -2,12 +2,15 @@
 
 (function($) {
   function initOpenSeadragon() {
-    $('picture[data-openseadragon]').openseadragon();
+    $('picture[data-openseadragon]:not(:has(.openseadragon-container))').openseadragon();
   }
 
   const jquery3 = parseInt($.fn.jquery.split('.')[0]) >= 3;
   let handler = 'ready';
-  if (typeof Turbolinks !== 'undefined' && Turbolinks.supported) {
+
+  if (typeof Turbo !== 'undefined') {
+    handler = 'turbo:load turbo:frame-load';
+  } else if (typeof Turbolinks !== 'undefined' && Turbolinks.supported) {
     // Turbolinks 5
     if (Turbolinks.BrowserAdapter) {
       handler = 'turbolinks:load';
