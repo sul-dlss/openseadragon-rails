@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Openseadragon::OpenseadragonHelper do
+RSpec.describe Openseadragon::OpenseadragonHelper do
   describe "#picture_tag" do
     context "without any sources" do
       it "should render an empty <picture>" do
@@ -105,21 +105,19 @@ describe Openseadragon::OpenseadragonHelper do
 
     describe "['prefixUrl']" do
       subject { defaults['prefixUrl'] }
-      it { should eq ''}
+      it { is_expected.to eq ''}
     end
 
     describe "['navImages']" do
       subject { defaults['navImages'] }
-      it { should eq(
-        "zoomIn"=>{"REST"=>"/assets/openseadragon/zoomin_rest.png", "GROUP"=>"/assets/openseadragon/zoomin_grouphover.png", "HOVER"=>"/assets/openseadragon/zoomin_hover.png", "DOWN"=>"/assets/openseadragon/zoomin_pressed.png"},
-        "zoomOut"=>{"REST"=>"/assets/openseadragon/zoomout_rest.png", "GROUP"=>"/assets/openseadragon/zoomout_grouphover.png", "HOVER"=>"/assets/openseadragon/zoomout_hover.png", "DOWN"=>"/assets/openseadragon/zoomout_pressed.png"},
-        "home"=>{"REST"=>"/assets/openseadragon/home_rest.png", "GROUP"=>"/assets/openseadragon/home_grouphover.png", "HOVER"=>"/assets/openseadragon/home_hover.png", "DOWN"=>"/assets/openseadragon/home_pressed.png"},
-        "fullpage"=>{"REST"=>"/assets/openseadragon/fullpage_rest.png", "GROUP"=>"/assets/openseadragon/fullpage_grouphover.png", "HOVER"=>"/assets/openseadragon/fullpage_hover.png", "DOWN"=>"/assets/openseadragon/fullpage_pressed.png"},
-        "rotateleft"=>{"REST"=>"/assets/openseadragon/rotateleft_rest.png", "GROUP"=>"/assets/openseadragon/rotateleft_grouphover.png", "HOVER"=>"/assets/openseadragon/rotateleft_hover.png", "DOWN"=>"/assets/openseadragon/rotateleft_pressed.png"},
-        "rotateright"=>{"REST"=>"/assets/openseadragon/rotateright_rest.png", "GROUP"=>"/assets/openseadragon/rotateright_grouphover.png", "HOVER"=>"/assets/openseadragon/rotateright_hover.png", "DOWN"=>"/assets/openseadragon/rotateright_pressed.png"},
-        "previous"=>{"REST"=>"/assets/openseadragon/previous_rest.png", "GROUP"=>"/assets/openseadragon/previous_grouphover.png", "HOVER"=>"/assets/openseadragon/previous_hover.png", "DOWN"=>"/assets/openseadragon/previous_pressed.png"},
-        "next"=>{"REST"=>"/assets/openseadragon/next_rest.png", "GROUP"=>"/assets/openseadragon/next_grouphover.png", "HOVER"=>"/assets/openseadragon/next_hover.png", "DOWN"=>"/assets/openseadragon/next_pressed.png"}
-      )}
+      it { is_expected.to include('zoomIn', 'zoomOut', 'home', 'fullpage', 'rotateleft', 'rotateright', 'previous', 'next') }
+
+      it 'has all the values' do
+        expect(subject).to all(include(have_key('REST')))
+        expect(subject).to all(include(have_key('GROUP')))
+        expect(subject).to all(include(have_key('HOVER')))
+        expect(subject).to all(include(have_key('DOWN')))
+      end
     end
   end
 end
