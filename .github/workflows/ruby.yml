@@ -20,6 +20,7 @@ jobs:
             rails_version: 7.1.5.1
     env:
       RAILS_VERSION: ${{ matrix.rails_version }}
+      ENGINE_CART_RAILS_OPTIONS: "--skip-git --skip-listen --skip-spring --skip-keeps --skip-kamal --skip-test -a propshaft"
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby ${{ matrix.ruby }}

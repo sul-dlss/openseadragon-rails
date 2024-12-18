@@ -15,7 +15,7 @@ module Openseadragon
     end
 
     initializer 'openseadragon.assets.precompile' do |app|
-      app.config.assets.precompile += %w[openseadragon/*.png]
+      app.config.assets.precompile += %w[node_modules/openseadragon/build/openseadragon/images/*.png]
     end
 
     initializer "openseadragon.importmap", before: "importmap" do |app|

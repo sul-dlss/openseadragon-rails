@@ -4,25 +4,24 @@ module Openseadragon
   class Install < Rails::Generators::Base
     source_root File.expand_path('../templates', __FILE__)
 
-    def assets
-      return unless defined?(Sprockets)
-
-      copy_file "openseadragon.css", "app/assets/stylesheets/openseadragon.css"
-      copy_file "openseadragon.js", "app/assets/javascripts/openseadragon.js"
-
-      if File.exist? 'app/assets/config/manifest.js'
-        append_to_file 'app/assets/config/manifest.js', "\n//= link openseadragon-assets\n"
-      end
-    end
-
     def append_javascript
-      return unless defined?(Importmap) && !defined?(Sprockets)
+      run "yarn init -y"
+      gsub_file "package.json", /\.internal_test_app/, "internal_test_app" # name beginning with a dot is illegal
+      run "yarn add openseadragon"
 
       append_to_file 'app/javascript/application.js' do
         <<~CONTENT
           // Openseadragon gem imports
-          import "openseadragon/jquery"
+          import "openseadragon/dom"
           import "openseadragon/rails"
+        CONTENT
+      end
+    end
+
+    def append_image_paths
+      append_to_file 'config/initializers/assets.rb' do
+        <<~CONTENT
+          Rails.application.config.assets.paths << Rails.application.root + 'node_modules/openseadragon/build/openseadragon/images'
         CONTENT
       end
     end

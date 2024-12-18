@@ -1,22 +1,23 @@
 (function($) {
   $.fn.openseadragon = function() {
+    console.warn("openseadragon/jquery.js is deprecated. Use openseadragon/dom.js instead.")
     var __osd_counter = 0;
     function generateOsdId() {
       __osd_counter++;
-      
+
       return "Openseadragon" + __osd_counter;
     }
 
     $(this).each(function() {
       var $picture = $(this);
       $picture.addClass('openseadragon-viewer');
-      
+
       if (typeof $picture.attr('id') === "undefined") {
         $picture.attr('id', generateOsdId());
       }
 
       var collectionOptions = $picture.data('openseadragon');
-      
+
       var sources = $picture.find('source[media="openseadragon"]');
 
       var tilesources = $.map(sources, function(e) {

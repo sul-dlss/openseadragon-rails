@@ -6,7 +6,7 @@ module Openseadragon
     # for the value of the src attribute and the value as the
     # arguments for the tag options.
     #
-    # The last hash is intepreted as optional arguments for the 
+    # The last hash is intepreted as optional arguments for the
     # <picture> tag. The second to last hash is optional arguments
     # to all <source> tags.
     #
@@ -23,10 +23,10 @@ module Openseadragon
             src, src_options = source.first
             src_options ||= {}
             source_options.merge(src_options.merge(src: src))
-          else  
+          else
             source_options.merge(src: source)
           end
-          
+
           yield tag_options if block_given?
           tag :source, tag_options
         end)
@@ -34,7 +34,7 @@ module Openseadragon
     end
 
     ##
-    # Generate a <picture> tag ready to be parsed by the openseadragon/rails 
+    # Generate a <picture> tag ready to be parsed by the rails
     # javascript and transformed into an openseadragon viewer. Openseadragon
     # tile source options are passed as a JSON encoded hash on the
     # data-openseadragon attribute.
@@ -49,7 +49,7 @@ module Openseadragon
       sources.flatten!
 
       tile_sources = sources.map { |thing| extract_openseadragon_picture_tilesource(thing) }
-      
+
       picture_options[:data] ||= {}
       picture_options[:data][:openseadragon] = osd_asset_defaults.merge(picture_options[:data][:openseadragon] || {}).to_json
 
@@ -64,7 +64,7 @@ module Openseadragon
     # @overload extract_openseadragon_picture_tilesource(tilesource_obj)
     #   @param tilesource_obj [#to_tilesource] a tilesource-backed object that
     #     is either a hash of openseadragon tilesource parameters or a URL to
-    #     a manifest containing those parameters. 
+    #     a manifest containing those parameters.
     # @overload extract_openseadragon_picture_tilesource(options)
     #   @param [Hash] options a hash of openseadragon tilesource options
     #   @option options [Hash] :html parameters for the <source> tag
@@ -79,10 +79,10 @@ module Openseadragon
         html_options ||= {}
         html_options[:data] ||= {}
         html_options[:data][:openseadragon] ||= {}
-        
+
         tilesource = thing.to_tilesource
         src = "openseadragon-tilesource"
-        
+
         if tilesource.is_a? Hash
           html_options[:data][:openseadragon].merge! tilesource
         else
@@ -96,13 +96,13 @@ module Openseadragon
         html_options = {}
         html_options.merge! src_options.fetch(:html, {})
         html_options[:data] ||= {}
-        
+
         osd_options = html_options[:data][:openseadragon] || {}
         osd_options.merge!(src_options.except(:html))
 
         if src.respond_to? :to_tilesource
           tilesource = src.to_tilesource
-          
+
           if tilesource.is_a? Hash
             osd_options.reverse_merge! tilesource
             src = "openseadragon-tilesource"
@@ -110,9 +110,9 @@ module Openseadragon
             src = tilesource
           end
         end
-        
+
         html_options[:data][:openseadragon] = osd_options.to_json
-        
+
         [ html_options.fetch(:src, src) => html_options ]
       else # string
         thing
@@ -124,52 +124,52 @@ module Openseadragon
         prefixUrl: '',
         navImages: {
           zoomIn: {
-            REST:     path_to_image('openseadragon/zoomin_rest.png'),
-            GROUP:    path_to_image('openseadragon/zoomin_grouphover.png'),
-            HOVER:    path_to_image('openseadragon/zoomin_hover.png'),
-            DOWN:     path_to_image('openseadragon/zoomin_pressed.png')
+            REST:     path_to_image('zoomin_rest.png'),
+            GROUP:    path_to_image('zoomin_grouphover.png'),
+            HOVER:    path_to_image('zoomin_hover.png'),
+            DOWN:     path_to_image('zoomin_pressed.png')
           },
           zoomOut: {
-              REST:   path_to_image('openseadragon/zoomout_rest.png'),
-              GROUP:  path_to_image('openseadragon/zoomout_grouphover.png'),
-              HOVER:  path_to_image('openseadragon/zoomout_hover.png'),
-              DOWN:   path_to_image('openseadragon/zoomout_pressed.png')
+              REST:   path_to_image('zoomout_rest.png'),
+              GROUP:  path_to_image('zoomout_grouphover.png'),
+              HOVER:  path_to_image('zoomout_hover.png'),
+              DOWN:   path_to_image('zoomout_pressed.png')
           },
           home: {
-              REST:   path_to_image('openseadragon/home_rest.png'),
-              GROUP:  path_to_image('openseadragon/home_grouphover.png'),
-              HOVER:  path_to_image('openseadragon/home_hover.png'),
-              DOWN:   path_to_image('openseadragon/home_pressed.png')
+              REST:   path_to_image('home_rest.png'),
+              GROUP:  path_to_image('home_grouphover.png'),
+              HOVER:  path_to_image('home_hover.png'),
+              DOWN:   path_to_image('home_pressed.png')
           },
           fullpage: {
-              REST:   path_to_image('openseadragon/fullpage_rest.png'),
-              GROUP:  path_to_image('openseadragon/fullpage_grouphover.png'),
-              HOVER:  path_to_image('openseadragon/fullpage_hover.png'),
-              DOWN:   path_to_image('openseadragon/fullpage_pressed.png')
+              REST:   path_to_image('fullpage_rest.png'),
+              GROUP:  path_to_image('fullpage_grouphover.png'),
+              HOVER:  path_to_image('fullpage_hover.png'),
+              DOWN:   path_to_image('fullpage_pressed.png')
           },
           rotateleft: {
-              REST:   path_to_image('openseadragon/rotateleft_rest.png'),
-              GROUP:  path_to_image('openseadragon/rotateleft_grouphover.png'),
-              HOVER:  path_to_image('openseadragon/rotateleft_hover.png'),
-              DOWN:   path_to_image('openseadragon/rotateleft_pressed.png')
+              REST:   path_to_image('rotateleft_rest.png'),
+              GROUP:  path_to_image('rotateleft_grouphover.png'),
+              HOVER:  path_to_image('rotateleft_hover.png'),
+              DOWN:   path_to_image('rotateleft_pressed.png')
           },
           rotateright: {
-              REST:   path_to_image('openseadragon/rotateright_rest.png'),
-              GROUP:  path_to_image('openseadragon/rotateright_grouphover.png'),
-              HOVER:  path_to_image('openseadragon/rotateright_hover.png'),
-              DOWN:   path_to_image('openseadragon/rotateright_pressed.png')
+              REST:   path_to_image('rotateright_rest.png'),
+              GROUP:  path_to_image('rotateright_grouphover.png'),
+              HOVER:  path_to_image('rotateright_hover.png'),
+              DOWN:   path_to_image('rotateright_pressed.png')
           },
           previous: {
-              REST:   path_to_image('openseadragon/previous_rest.png'),
-              GROUP:  path_to_image('openseadragon/previous_grouphover.png'),
-              HOVER:  path_to_image('openseadragon/previous_hover.png'),
-              DOWN:   path_to_image('openseadragon/previous_pressed.png')
+              REST:   path_to_image('previous_rest.png'),
+              GROUP:  path_to_image('previous_grouphover.png'),
+              HOVER:  path_to_image('previous_hover.png'),
+              DOWN:   path_to_image('previous_pressed.png')
           },
           next: {
-              REST:   path_to_image('openseadragon/next_rest.png'),
-              GROUP:  path_to_image('openseadragon/next_grouphover.png'),
-              HOVER:  path_to_image('openseadragon/next_hover.png'),
-              DOWN:   path_to_image('openseadragon/next_pressed.png')
+              REST:   path_to_image('next_rest.png'),
+              GROUP:  path_to_image('next_grouphover.png'),
+              HOVER:  path_to_image('next_hover.png'),
+              DOWN:   path_to_image('next_pressed.png')
           }
         }
       }.with_indifferent_access

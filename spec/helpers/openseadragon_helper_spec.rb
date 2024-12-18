@@ -88,7 +88,7 @@ RSpec.describe Openseadragon::OpenseadragonHelper do
         end
       end
 
-      context "tielsource key and options" do
+      context "tilesource key and options" do
         let(:source) { double(to_tilesource: { a: 1, b: 1}) }
         subject { helper.openseadragon_picture_tag([source => { html: { id: 'xyz' }, b: 2, c: 3}]) }
         it "should merge a tilesource key with the options provided" do
