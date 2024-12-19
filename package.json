@@ -1,6 +1,6 @@
 {
   "name": "openseadragon-rails",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Openseadragon support for Rails apps",
   "main": "app/javascript/openseadragon-rails/index.js",
   "module": "app/javascript/openseadragon-rails/index.js",
