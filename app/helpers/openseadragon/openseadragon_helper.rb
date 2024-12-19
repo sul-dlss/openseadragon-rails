@@ -119,6 +119,11 @@ module Openseadragon
       end
     end
 
+    def osd_asset(file)
+      image_path("openseadragon/build/openseadragon/images/#{file}")
+    end
+
+
     def osd_asset_defaults
       {
         prefixUrl: '',
