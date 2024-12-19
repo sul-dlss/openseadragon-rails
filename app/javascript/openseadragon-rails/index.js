@@ -1,2 +1,2 @@
-import './dom'
-import './rails'
+import 'openseadragon-rails/dom'
+import 'openseadragon-rails/rails'
