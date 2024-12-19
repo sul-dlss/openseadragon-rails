@@ -1,4 +1,4 @@
-import 'openseadragon/dom'
+import './dom'
 
 (function() {
   function initOpenSeadragon() {
