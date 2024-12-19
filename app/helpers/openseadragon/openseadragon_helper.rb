@@ -120,7 +120,7 @@ module Openseadragon
     end
 
     def osd_asset(file)
-      image_path("openseadragon/build/openseadragon/images/#{file}")
+      image_path(file)
     end
 
 
