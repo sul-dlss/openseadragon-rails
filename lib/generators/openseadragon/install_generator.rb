@@ -20,7 +20,7 @@ module Openseadragon
 
     def append_image_paths
       append_to_file 'config/initializers/assets.rb' do
-        "\nRails.application.config.assets.paths << Rails.application.root + 'node_modules/openseadragon/build/openseadragon/images'\n"
+        "\nRails.application.config.assets.paths << Rails.root.join('node_modules/openseadragon/build/openseadragon/images')\n"
       end
     end
 
