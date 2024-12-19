@@ -12,7 +12,7 @@ Add the gem to your Gemfile:
 gem 'openseadragon'
 ```
 
-Run bundle install: 
+Run bundle install:
 
 ```
 $ bundle install
@@ -28,10 +28,25 @@ The generator will install the Rails helpers and openseadragon assets.
 
 ## Usage
 
+You must provide the `OpenSeadragon` function as a global.  You can do this via the NPM dependency:
+```js
+import OpenSeadragon from 'openseadragon'
+window.OpenSeadragon = OpenSeadragon
+```
+
+or via the CDN:
+```html
+<script src="https://cdn.jsdelivr.net/npm/openseadragon@5.0/build/openseadragon/openseadragon.min.js"></script>
+```
+
+See [https://openseadragon.github.io](https://openseadragon.github.io) for further details
+
+
+### Helpers
 This gem provides two helpers, `#picture_tag` and `#openseadragon_picture_tag`.
 
 
-### picture_tag
+#### picture_tag
 
 The `#picture_tag` helper creates [HTML5 <picture> tags](http://www.w3.org/TR/html-picture-element/).
 
@@ -65,7 +80,7 @@ picture_tag ['page1.jpg' => { id: 'first-picture'}], 'page2.jpg', 'page3.jpg', {
 </picture>
 ```
 
-### openseadragon_picture_tag
+#### openseadragon_picture_tag
 
 If you have an OpenSeaDragon tilesource, you can use this helper to construct a HTML5 `<picture>` that will render as an OpenSeaDragon tile viewer.
 
