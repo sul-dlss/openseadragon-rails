@@ -2,8 +2,8 @@
   "name": "openseadragon-rails",
   "version": "1.0.3",
   "description": "Openseadragon support for Rails apps",
-  "main": "app/assets/javascripts/openseadragon/rails.js",
-  "module": "app/assets/javascripts/openseadragon/rails.js",
+  "main": "app/assets/javascripts/openseadragon/index.js",
+  "module": "app/assets/javascripts/openseadragon/index.js",
   "files": [
     "app/assets/javascripts/openseadragon/*.js",
     "vendor/assets/javascripts/*.js",

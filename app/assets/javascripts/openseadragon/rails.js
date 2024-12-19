@@ -1,5 +1,3 @@
-import './dom'
-
 (function() {
   function initOpenSeadragon() {
     document.querySelectorAll('picture[data-openseadragon]:not(:has(.openseadragon-container))').openseadragon();
