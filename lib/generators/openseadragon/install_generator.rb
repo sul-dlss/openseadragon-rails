@@ -11,9 +11,9 @@ module Openseadragon
 
       append_to_file 'app/javascript/application.js' do
         <<~CONTENT
-          // Openseadragon gem imports
-          import "openseadragon/dom"
-          import "openseadragon/rails"
+
+          import "openseadragon-rails"
+
         CONTENT
       end
     end
