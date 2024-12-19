@@ -129,52 +129,52 @@ module Openseadragon
         prefixUrl: '',
         navImages: {
           zoomIn: {
-            REST:     path_to_image('zoomin_rest.png'),
-            GROUP:    path_to_image('zoomin_grouphover.png'),
-            HOVER:    path_to_image('zoomin_hover.png'),
-            DOWN:     path_to_image('zoomin_pressed.png')
+            REST:     osd_asset('zoomin_rest.png'),
+            GROUP:    osd_asset('zoomin_grouphover.png'),
+            HOVER:    osd_asset('zoomin_hover.png'),
+            DOWN:     osd_asset('zoomin_pressed.png')
           },
           zoomOut: {
-              REST:   path_to_image('zoomout_rest.png'),
-              GROUP:  path_to_image('zoomout_grouphover.png'),
-              HOVER:  path_to_image('zoomout_hover.png'),
-              DOWN:   path_to_image('zoomout_pressed.png')
+              REST:   osd_asset('zoomout_rest.png'),
+              GROUP:  osd_asset('zoomout_grouphover.png'),
+              HOVER:  osd_asset('zoomout_hover.png'),
+              DOWN:   osd_asset('zoomout_pressed.png')
           },
           home: {
-              REST:   path_to_image('home_rest.png'),
-              GROUP:  path_to_image('home_grouphover.png'),
-              HOVER:  path_to_image('home_hover.png'),
-              DOWN:   path_to_image('home_pressed.png')
+              REST:   osd_asset('home_rest.png'),
+              GROUP:  osd_asset('home_grouphover.png'),
+              HOVER:  osd_asset('home_hover.png'),
+              DOWN:   osd_asset('home_pressed.png')
           },
           fullpage: {
-              REST:   path_to_image('fullpage_rest.png'),
-              GROUP:  path_to_image('fullpage_grouphover.png'),
-              HOVER:  path_to_image('fullpage_hover.png'),
-              DOWN:   path_to_image('fullpage_pressed.png')
+              REST:   osd_asset('fullpage_rest.png'),
+              GROUP:  osd_asset('fullpage_grouphover.png'),
+              HOVER:  osd_asset('fullpage_hover.png'),
+              DOWN:   osd_asset('fullpage_pressed.png')
           },
           rotateleft: {
-              REST:   path_to_image('rotateleft_rest.png'),
-              GROUP:  path_to_image('rotateleft_grouphover.png'),
-              HOVER:  path_to_image('rotateleft_hover.png'),
-              DOWN:   path_to_image('rotateleft_pressed.png')
+              REST:   osd_asset('rotateleft_rest.png'),
+              GROUP:  osd_asset('rotateleft_grouphover.png'),
+              HOVER:  osd_asset('rotateleft_hover.png'),
+              DOWN:   osd_asset('rotateleft_pressed.png')
           },
           rotateright: {
-              REST:   path_to_image('rotateright_rest.png'),
-              GROUP:  path_to_image('rotateright_grouphover.png'),
-              HOVER:  path_to_image('rotateright_hover.png'),
-              DOWN:   path_to_image('rotateright_pressed.png')
+              REST:   osd_asset('rotateright_rest.png'),
+              GROUP:  osd_asset('rotateright_grouphover.png'),
+              HOVER:  osd_asset('rotateright_hover.png'),
+              DOWN:   osd_asset('rotateright_pressed.png')
           },
           previous: {
-              REST:   path_to_image('previous_rest.png'),
-              GROUP:  path_to_image('previous_grouphover.png'),
-              HOVER:  path_to_image('previous_hover.png'),
-              DOWN:   path_to_image('previous_pressed.png')
+              REST:   osd_asset('previous_rest.png'),
+              GROUP:  osd_asset('previous_grouphover.png'),
+              HOVER:  osd_asset('previous_hover.png'),
+              DOWN:   osd_asset('previous_pressed.png')
           },
           next: {
-              REST:   path_to_image('next_rest.png'),
-              GROUP:  path_to_image('next_grouphover.png'),
-              HOVER:  path_to_image('next_hover.png'),
-              DOWN:   path_to_image('next_pressed.png')
+              REST:   osd_asset('next_rest.png'),
+              GROUP:  osd_asset('next_grouphover.png'),
+              HOVER:  osd_asset('next_hover.png'),
+              DOWN:   osd_asset('next_pressed.png')
           }
         }
       }.with_indifferent_access
