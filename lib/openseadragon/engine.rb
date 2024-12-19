@@ -14,10 +14,6 @@ module Openseadragon
       end
     end
 
-    initializer 'openseadragon.assets.precompile' do |app|
-      app.config.assets.precompile += %w[node_modules/openseadragon/build/openseadragon/images/*.png]
-    end
-
     initializer "openseadragon.importmap", before: "importmap" do |app|
       app.config.importmap.paths << Engine.root.join("config/importmap.rb") if app.config.respond_to?(:importmap)
     end
