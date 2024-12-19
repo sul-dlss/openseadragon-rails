@@ -1,0 +1,27 @@
+{
+  "name": "openseadragon-rails",
+  "version": "1.0.1",
+  "description": "Openseadragon support for Rails apps",
+  "main": "app/assets/javascripts/openseadragon.js",
+  "files": [
+    "app/assets/javascripts/openseadragon/*.js",
+    "vendor/assets/javascripts/*.js",
+    "app/assets/stylesheets/openseadragon/*.css"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sul-dlss/openseadragon-rails.git"
+  },
+  "author": "Chris Beer, Justin Coyne, et al.",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sul-dlss/openseadragon-rails/issues"
+  },
+  "homepage": "https://github.com/sul-dlss/openseadragon-rails#readme",
+  "dependencies": {
+    "openseadragon": "^5.0.1"
+  }
+}
