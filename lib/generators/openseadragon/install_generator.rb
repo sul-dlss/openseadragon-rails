@@ -7,7 +7,7 @@ module Openseadragon
     def append_javascript
       run "yarn init -y"
       gsub_file "package.json", /\.internal_test_app/, "internal_test_app" # name beginning with a dot is illegal
-      run "yarn add openseadragon"
+      run "yarn add openseadragon-rails"
 
       append_to_file 'app/javascript/application.js' do
         <<~CONTENT
