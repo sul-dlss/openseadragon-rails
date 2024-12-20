@@ -2,6 +2,10 @@
   "name": "openseadragon-rails",
   "version": "1.0.9",
   "description": "Openseadragon support for Rails apps",
+  "exports": {
+    ".": "./app/javascript/openseadragon-rails/index.js",
+    "./*": "./app/javascript/openseadragon-rails/*.js"
+  },
   "main": "app/javascript/openseadragon-rails/index.js",
   "module": "app/javascript/openseadragon-rails/index.js",
   "files": [
