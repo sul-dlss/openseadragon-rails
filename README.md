@@ -28,16 +28,7 @@ The generator will install the Rails helpers and openseadragon assets.
 
 ## Usage
 
-You must provide the `OpenSeadragon` function as a global.  You can do this via the NPM dependency:
-```js
-import OpenSeadragon from 'openseadragon'
-window.OpenSeadragon = OpenSeadragon
-```
-
-or via the CDN:
-```html
-<script src="https://cdn.jsdelivr.net/npm/openseadragon@5.0/build/openseadragon/openseadragon.min.js"></script>
-```
+You must provide the `openseadragon` npm package as an external dependency.
 
 See [https://openseadragon.github.io](https://openseadragon.github.io) for further details
 

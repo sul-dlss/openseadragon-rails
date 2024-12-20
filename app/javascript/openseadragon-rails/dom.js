@@ -1,3 +1,5 @@
+import OpenSeadragon from 'openseadragon'
+
 (function() {
   let __osd_counter = 0;
 
