@@ -1,3 +1,5 @@
+import OpenSeadragon from 'openseadragon'
+
 (function($) {
   $.fn.openseadragon = function() {
     console.warn("openseadragon/jquery.js is deprecated. Use openseadragon/dom.js instead.")
