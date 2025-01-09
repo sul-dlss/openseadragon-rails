@@ -2,16 +2,19 @@ require 'rails/generators'
 
 module Openseadragon
   class Install < Rails::Generators::Base
-    source_root File.expand_path('../templates', __FILE__)
+    source_root File.expand_path('templates', __dir__)
 
     def append_javascript
-      run "yarn init -y"
-      gsub_file "package.json", /\.internal_test_app/, "internal_test_app" # name beginning with a dot is illegal
-      run "yarn add openseadragon-rails"
+      run 'yarn init -y'
+      gsub_file 'package.json', /\.internal_test_app/, 'internal_test_app' # name beginning with a dot is illegal
+      run 'yarn add openseadragon-rails'
+
+      run 'bin/importmap pin openseadragon' if File.exist?('bin/importmap')
 
       append_to_file 'app/javascript/application.js' do
         <<~CONTENT
 
+          import "openseadragon"
           import "openseadragon-rails"
 
         CONTENT
