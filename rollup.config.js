@@ -4,7 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 const BUNDLE = process.env.BUNDLE === 'true'
 const ESM = process.env.ESM === 'true'
 
-const fileDest = `index${ESM ? '.esm' : ''}`
+const fileDest = `openseadragon-rails${ESM ? '.esm' : ''}`
 const external = [
   'openseadragon',
 ]

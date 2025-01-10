@@ -1,4 +1,4 @@
-import './dom'
+import 'openseadragon-rails/dom'
 
 (function() {
   function initOpenSeadragon() {

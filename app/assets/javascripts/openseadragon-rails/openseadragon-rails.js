@@ -77,4 +77,4 @@
   })();
 
 }));
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=openseadragon-rails.js.map

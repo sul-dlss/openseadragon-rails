@@ -71,4 +71,4 @@ import OpenSeadragon from 'openseadragon';
     addEventListener('load', () => initOpenSeadragon());
   }
 })();
-//# sourceMappingURL=index.esm.js.map
+//# sourceMappingURL=openseadragon-rails.esm.js.map
