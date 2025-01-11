@@ -11,6 +11,8 @@ module Openseadragon
 
       run 'bin/importmap pin openseadragon' if File.exist?('bin/importmap')
 
+      return unless File.exist?('app/javascript/application.js')
+
       append_to_file 'app/javascript/application.js' do
         <<~CONTENT
 
