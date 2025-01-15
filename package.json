@@ -6,7 +6,7 @@
     ".": "./app/javascript/openseadragon-rails/index.js",
     "./*": "./app/javascript/openseadragon-rails/*.js"
   },
-  "main": "app/assets/javascripts/openseadragon-rails/index.js",
+  "main": "app/assets/javascripts/openseadragon-rails/openseadragon-rails.js",
   "module": "app/javascript/openseadragon-rails/index.js",
   "files": [
     "app/javascript/openseadragon-rails/*.js",
