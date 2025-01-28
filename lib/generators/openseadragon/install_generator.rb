@@ -27,6 +27,15 @@ module Openseadragon
       end
     end
 
+    def add_default_style
+      copy_file 'openseadragon.css', 'app/assets/stylesheets/openseadragon.css'
+  
+      if (scss_file = %w[app/assets/stylesheets/application.bootstrap.scss
+                         app/assets/stylesheets/application.scss].find { |f| File.exist?(f) })
+        append_to_file scss_file, "\n@import 'openseadragon';\n"
+      end
+    end
+
     def inject_helper
       inject_into_class 'app/controllers/application_controller.rb', ApplicationController do
         "  helper Openseadragon::OpenseadragonHelper\n"
