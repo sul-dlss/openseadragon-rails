@@ -20,7 +20,7 @@ jobs:
             additional_engine_cart_rails_options: --css=bootstrap --js=esbuild
     env:
       RAILS_VERSION: ${{ matrix.rails_version }}
-      ENGINE_CART_RAILS_OPTIONS: "--skip-git --skip-listen --skip-spring --skip-keeps --skip-kamal --skip-test ${{ matrix.additional_engine_cart_rails_options }}"
+      ENGINE_CART_RAILS_OPTIONS: "--skip-git --skip-listen --skip-spring --skip-keeps --skip-kamal --skip-thruster --skip-test ${{ matrix.additional_engine_cart_rails_options }}"
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby ${{ matrix.ruby }}
